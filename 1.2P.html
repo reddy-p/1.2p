@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <h1>JavaScript String Methods</h1>
+
+  <h2>The string is: </h2>
+  <p id="the_string"></p>
+
+  <h2>The length of the string is:</h2>
+  <p id="string_length"></p>
+
+  <h2>The string to uppercase:</h2>
+  <p id="string_uppercase"></p>
+
+  <h2>The string to lowercase:</h2>
+  <p id="string_lowercase"></p>
+
+  <h2>The string starts with 'Programming'?</h2>
+  <p id="starts_with"></p>
+
+  <h2>The string repeated 10 times:</h2>
+  <p id="string_repeat"></p>
+
+  <h1>JavaScript Number Methods</h1>
+
+  <h2>The number is:</h2>
+  <p id="original_number"></p>
+
+  <h2>The number rounded up is:</h2>
+  <p id="round_up"></p>
+
+  <h2>The number rounded down is:</h2>
+  <p id="round_down"></p>
+
+  <h2>The number with 3 decimal places:</h2>
+  <p id="fixed_decimal"></p>
+
+  <h2>Random number:</h2>
+  <p id="random_number"></p>
+
+  <h2>To the power of 3:</h2>
+  <p id="power_of"></p>
+
+  <h1>JavaScript Array Methods</h1>
+
+  <h2>The array is:</h2>
+  <p id="original_array"></p>
+
+  <h2>Array length:</h2>
+  <p id="colour_length"></p>
+
+  <h2>First item in array:</h2>
+  <p id="first_item"></p>
+
+  <h2>Last item in array:</h2>
+  <p id="last_item"></p>
+
+  <h2>Adds element to the end of the array:</h2>
+  <p id="push_end"></p>
+
+  <h2>Takes element from the end of the array:</h2>
+  <p id="pop_end"></p>
+
+  <h1>JavaScript Date Methods</h1>
+
+  <h2>Current date and time:</h2>
+  <p id="current_date"></p>
+
+  <h2>Specific date</h2>
+  <p id="specific_date"></p>
+
+  <h2>The year: </h2>
+  <p id="full_year"></p>
+
+  <h2>The month:</h2>
+  <p id="the_month"></p>
+
+  <h2>The hours:</h2>
+  <p id="the_hours"></p>
+
+  <h2>The minutes:</h2>
+  <p id="the_minutes"></p>
+
+  <h2>The milliseconds</h2>
+  <p id="the_milliseconds"></p>
+
+  <h1>JavaScript Function Methods</h1>
+
+  <h2>multiply: 5 and 2</h2>
+  <p id="calculation"></p>
+
+  <h2>function that tests string equivilence: </h2>
+  <p>'monday' and 'Monday'</p>
+  <p id="string_equivilence"></p>
+  <p>'monday' and 'monday'</p>
+  <p id="string_equivilence_two"></p>
+
+  <script>
+    let text = "Programming is Cool";
+
+    // shows original string
+    document.getElementById("the_string").innerHTML = text;
+    // shows length of string 
+    document.getElementById("string_length").innerHTML = text.length;
+    // shows string in uppercase
+    document.getElementById("string_uppercase").innerHTML = text.toUpperCase();
+    // shows string in lowercase
+    document.getElementById("string_lowercase").innerHTML = text.toLowerCase();
+    // checks if string starts with
+    document.getElementById("starts_with").innerHTML = text.startsWith("Programming");
+    // shows string with no spaces
+    document.getElementById("string_repeat").innerHTML = text.repeat(10);
+    
+    let age = 10.5;
+    // shows original number
+    document.getElementById("original_number").innerHTML = age;
+    // shows number rounded up
+    document.getElementById("round_up").innerHTML = Math.ceil(age);
+    // shows number rounded down
+    document.getElementById("round_down").innerHTML = Math.floor(age);
+    // shows tha number to t3 decimal places
+    document.getElementById("fixed_decimal").innerHTML = age.toFixed(4);
+    // checks if number is infinate
+    document.getElementById("random_number").innerHTML = Math.random();
+    // returns the number to the power of 3
+    document.getElementById("power_of").innerHTML = Math.pow(age, 3);
+
+    let colours = ["Red", "Yellow", "Pink", "Purple", "Blue", "Green"];
+    // shows original array
+    document.getElementById("original_array").innerHTML = colours;
+    // shows array length
+    document.getElementById("colour_length").innerHTML = colours.length;
+    // shows first item of array
+    document.getElementById("first_item").innerHTML = colours.at(0);
+    // shows last item in array
+    document.getElementById("last_item").innerHTML = colours.at(colours.length - 1);
+    // pushes element to the end of array
+    colours.push("Orange");
+    document.getElementById("push_end").innerHTML = colours;
+    // takes elelement off the array
+    colours.pop();
+    document.getElementById("pop_end").innerHTML = colours;
+
+    let date = new Date();
+    // shows current time and date
+    document.getElementById("current_date").innerHTML = date;
+    // set specific date
+    document.getElementById("specific_date").innerHTML = new Date(1998, 8, 4);
+    // shows the full year
+    document.getElementById("full_year").innerHTML = date.getFullYear();
+    // shows the hour
+    document.getElementById("the_hours").innerHTML = date.getHours();
+    //shows the minutes
+    document.getElementById("the_minutes").innerHTML = date.getMinutes();
+    //shows the milliseconds
+    document.getElementById("the_milliseconds").innerHTML = date.getMilliseconds();
+
+    // Function to multiply two numbers
+    function calculate(p1, p2) {
+      return p1 * p2;
+    }
+    let result = calculate(5, 2);
+    document.getElementById("calculation").innerHTML = result;
+
+    // Function to see if two strings are the same
+    function isEquivilentString(a, b) {
+      if (a === b) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+    document.getElementById("string_equivilence").innerHTML = isEquivilentString("monday", "Monday");
+    document.getElementById("string_equivilence_two").innerHTML = isEquivilentString("monday", "monday");
+
+  </script>
+</body>
+
+</html>
